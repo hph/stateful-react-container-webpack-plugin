@@ -1,0 +1,25 @@
+{
+  "name": "stateful-react-container-webpack-plugin",
+  "version": "0.1.0",
+  "description": "A simple plugin that adds a React container element with initial state from the server to a template built with HtmlWebpackPlugin",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hph/stateful-react-container-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "state",
+    "html-webpack-plugin"
+  ],
+  "author": "Haukur Páll Hallvarðsson <hph@hph.is>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hph/stateful-react-container-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/hph/stateful-react-container-webpack-plugin",
+  "dependencies": {
+    "lodash.defaults": "4.0.1"
+  }
+}
