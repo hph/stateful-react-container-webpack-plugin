@@ -5,7 +5,7 @@ const defaults = require('lodash.defaults');
 
 class StatefulReactContainerPlugin {
   constructor (options) {
-    this.options = _.defaults(options || {}, {
+    this.options = defaults(options || {}, {
       id: 'container',
       attribute: 'state',
       variable: 'state',
