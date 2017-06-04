@@ -36,6 +36,9 @@ to customize usage:
   initial state for the React.js app.
 - `variable` (default: `state`): The name of the variable containing the
   initial state in the template.
+- `noState` (default: `false`): Omits the data attribute and its value. This is
+  useful if you only want this plugin to generate the container element and are
+  not using server rendering.
 
 ### Example output
 

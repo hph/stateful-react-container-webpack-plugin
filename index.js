@@ -9,6 +9,7 @@ class StatefulReactContainerPlugin {
       id: 'container',
       attribute: 'state',
       variable: 'state',
+      noState: false,
     });
   }
 
@@ -22,8 +23,9 @@ class StatefulReactContainerPlugin {
   }
 
   addContainer (data, callback) {
-    const { id, attribute, variable } = this.options;
-    const content = `<body><div id="${id}" data-${attribute}="<%= ${variable} %>"></div>`;
+    const { id, attribute, variable, noState } = this.options;
+    const data = noState ? '' : ` data-${attribute}="<%= ${variable} %>"`;
+    const content = `<body><div id="${id}"${data}></div>`;
     data.html = data.html.replace(/<body>/, content);
     callback(null, data);
   }
