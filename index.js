@@ -32,7 +32,7 @@ class StatefulReactContainerPlugin {
       pattern = /<body>/;
     } else if (position === 'end') {
       content = `<div id="${id}"${state}></div></body>`;
-      pattern = /<\\body>/;
+      pattern = /<\/body>/;
     }
     data.html = data.html.replace(pattern, content);
     callback(null, data);
