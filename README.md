@@ -39,6 +39,9 @@ to customize usage:
 - `noState` (default: `false`): Omits the data attribute and its value. This is
   useful if you only want this plugin to generate the container element and are
   not using server rendering.
+- `position` (default: `'start'`): Determines whether the container is
+  immediately after the opening body tag or immediately before the closing tag.
+  Can be either `'start'` or `'end'`.
 
 ### Example output
 

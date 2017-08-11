@@ -10,6 +10,7 @@ class StatefulReactContainerPlugin {
       attribute: 'state',
       variable: 'state',
       noState: false,
+      position: 'start',
     });
   }
 
@@ -23,10 +24,17 @@ class StatefulReactContainerPlugin {
   }
 
   addContainer (data, callback) {
-    const { id, attribute, variable, noState } = this.options;
+    const { id, attribute, variable, noState, position } = this.options;
     const state = noState ? '' : ` data-${attribute}="<%= ${variable} %>"`;
-    const content = `<body><div id="${id}"${state}></div>`;
-    data.html = data.html.replace(/<body>/, content);
+    let pattern;
+    if (position === 'start') {
+      const content = `<body><div id="${id}"${state}></div>`;
+      pattern = /<body>/;
+    } else if (position === 'end') {
+      const content = `<div id="${id}"${state}></div></body>`;
+      pattern = /<\\body>/;
+    }
+    data.html = data.html.replace(pattern, content);
     callback(null, data);
   }
 }

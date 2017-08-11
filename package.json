@@ -1,6 +1,6 @@
 {
   "name": "stateful-react-container-webpack-plugin",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A simple plugin that adds a React container element with initial state from the server to a template built with HtmlWebpackPlugin",
   "main": "index.js",
   "repository": {
