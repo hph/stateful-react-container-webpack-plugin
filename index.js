@@ -26,12 +26,12 @@ class StatefulReactContainerPlugin {
   addContainer (data, callback) {
     const { id, attribute, variable, noState, position } = this.options;
     const state = noState ? '' : ` data-${attribute}="<%= ${variable} %>"`;
-    let pattern;
+    let pattern, content;
     if (position === 'start') {
-      const content = `<body><div id="${id}"${state}></div>`;
+      content = `<body><div id="${id}"${state}></div>`;
       pattern = /<body>/;
     } else if (position === 'end') {
-      const content = `<div id="${id}"${state}></div></body>`;
+      content = `<div id="${id}"${state}></div></body>`;
       pattern = /<\\body>/;
     }
     data.html = data.html.replace(pattern, content);
