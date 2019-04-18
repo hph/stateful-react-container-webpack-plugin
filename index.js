@@ -23,7 +23,7 @@ class StatefulReactContainerPlugin {
     compilation.plugin(event, this.addContainer.bind(this));
   }
 
-  addContainer (data, callback) {
+  addContainer (data) {
     const { id, attribute, variable, noState, position } = this.options;
     const state = noState ? '' : ` data-${attribute}="<%= ${variable} %>"`;
     let pattern, content;
@@ -35,7 +35,7 @@ class StatefulReactContainerPlugin {
       pattern = /<\/body>/;
     }
     data.html = data.html.replace(pattern, content);
-    callback(null, data);
+    return data;
   }
 }
 
